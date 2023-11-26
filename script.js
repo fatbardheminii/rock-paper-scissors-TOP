@@ -1,3 +1,4 @@
+//3 choices allowed
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3);
   if (computerChoice === 0) {
@@ -10,7 +11,9 @@ function getComputerChoice() {
   console.log(`Computer choice is: ${computerChoice}`);
   return computerChoice;
 }
-
+//2 parameters- the function for a round
+//conditional statements to check for a winner or draw
+//increment winner's score
 function playRound(computerSelection, playerSelection) {
   if (computerSelection === playerSelection) {
     return "Result of the round: DRAW!";
@@ -39,12 +42,13 @@ function playRound(computerSelection, playerSelection) {
     return "Use only allowed choices: ROCK, PAPER OR SCISSORS!";
   }
 }
-
+//keep track of the scores
 let playerScore = 0;
 let computerScore = 0;
-
+//Allow only 5 rounds for a game
 for (let round = 1; round < 6; round++) {
   console.log(`Round: ${round}`);
+  //place variables of cpChoice and plChoice inside for loop, so we get different outcomes after each round
   let computerChoice = getComputerChoice();
   const playerChoice = prompt("Make your choice:").toLowerCase();
   console.log(`Player choice is: ${playerChoice}`);
@@ -53,7 +57,7 @@ for (let round = 1; round < 6; round++) {
     `Player score is: ${playerScore} \n Computer score is: ${computerScore}`
   );
 }
-
+//check scores for the end result
 if (playerScore === computerScore) {
   console.log("The game after 5 rounds ends in DRAW");
 } else if (playerScore > computerScore) {
