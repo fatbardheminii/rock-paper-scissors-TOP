@@ -45,18 +45,7 @@ function playRound(computerSelection, playerSelection) {
 //keep track of the scores
 let playerScore = 0;
 let computerScore = 0;
-//Allow only 5 rounds for a game
-for (let round = 1; round < 6; round++) {
-  console.log(`Round: ${round}`);
-  //place variables of cpChoice and plChoice inside for loop, so we get different outcomes after each round
-  let computerChoice = getComputerChoice();
-  const playerChoice = prompt("Make your choice:").toLowerCase();
-  console.log(`Player choice is: ${playerChoice}`);
-  console.log(playRound(computerChoice, playerChoice));
-  console.log(
-    `Player score is: ${playerScore} \n Computer score is: ${computerScore}`
-  );
-}
+
 //check scores for the end result
 if (playerScore === computerScore) {
   console.log("The game after 5 rounds ends in DRAW");
