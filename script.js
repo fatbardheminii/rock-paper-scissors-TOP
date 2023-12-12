@@ -9,10 +9,20 @@ function getComputerChoice() {
     computerChoice = "scissors";
   }
   console.log(`Computer choice is: ${computerChoice}`);
+  const showCpChoice = document.createElement('p');
+  showCpChoice.textContent = `${computerChoice}`;
+  computerChoiceDiv.appendChild(showCpChoice);
   return computerChoice;
 }
 
-const buttons = document.querySelectorAll('button'); 
+const buttons = document.querySelectorAll('button');
+const playerChoiceDiv = document.querySelector('div.player-choice');
+const computerChoiceDiv = document.querySelector("div.computer-choice");
+const explanationDiv = document.querySelector("div.explanation");
+const roundWinnerDiv = document.querySelector("div.round-winner");
+const playerScoreDiv = document.querySelector("div.player-score");
+const computerScoreDiv = document.querySelector("div.computer-score");
+
 //despite which button is clicked addEvent Listener
 //this addEventListener plays a round when clicked
 buttons.forEach( function(button) {
@@ -23,34 +33,52 @@ buttons.forEach( function(button) {
       function getPlayerChoice() {
         let playerSelection = button.id;
         console.log(`Player choice is: ${playerSelection}`);
+        const showPlChoice = document.createElement('p');
+        showPlChoice.textContent = `${playerSelection}`;
+        playerChoiceDiv.appendChild(showPlChoice);
         return playerSelection;
       }
       //call the values after each click
       let plChoice = getPlayerChoice();
       let cpChoice = getComputerChoice();
-      playRound(cpChoice, plChoice);
+
+      function createExplanation(){
+        const explanation = document.createElement('p');
+        const resultOfRound = playRound(cpChoice, plChoice);
+        explanation.textContent = `${resultOfRound}`;
+        explanationDiv.appendChild(explanation);
+        console.log(resultOfRound);
+        return explanation;
+      }
+      createExplanation();
     }
   );
 })
 
 
-
-
 //2 parameters- the function for a round
 //conditional statements to check for a winner or draw
 //increment winner's score
+
 function playRound(computerSelection, playerSelection) {
-  console.log("hiii");
+  function displayScore() {
+    const playerScorePara = document.createElement("p");
+    playerScorePara.textContent = `Player score \n ${playerScore}`;
+    playerScoreDiv.appendChild(playerScorePara);
+
+    const computerScorePara = document.createElement("p");
+    computerScorePara.textContent = `Computer score \n ${computerScore}`;
+    computerScoreDiv.appendChild(computerScorePara);
+  }
+
+  displayScore();
   if (computerSelection === playerSelection) {
     return "Result of the round: DRAW!";
   } else if (computerSelection === "rock" && playerSelection === "paper") {
     playerScore++;
     console.log(playerScore);
     return "Paper beats rock \n The winner of the round is: Player!";
-  } else if (
-    computerSelection === "computerSelection === rock" &&
-    playerSelection === "scissors"
-  ) {
+  } else if (computerSelection === "rock" && playerSelection === "scissors") {
     computerScore++;
     console.log(computerScore);
     return "Rock beats scissors \n The winner of the round is: Computer!";
@@ -70,7 +98,11 @@ function playRound(computerSelection, playerSelection) {
     computerScore++;
     console.log(computerScore);
     return "Scissors beat paper \n The winner of the round is: Computer!";
-  } else {
+  } else if (
+    playerSelection !== "rock" ||
+    playerSelection !== "paper" ||
+    playerSelection !== "scissors"
+  ) {
     return "Use only allowed choices: ROCK, PAPER OR SCISSORS!";
   }
 }
