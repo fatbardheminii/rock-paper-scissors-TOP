@@ -10,6 +10,7 @@ function getComputerChoice() {
   }
   console.log(`Computer choice is: ${computerChoice}`);
   showCpChoice.textContent = `${computerChoice}`;
+  showCpChoice.style.cssText = "font-Weight: bold; text-transform: uppercase;";
   computerChoiceDiv.appendChild(showCpChoice);
   return computerChoice;
 }
@@ -21,10 +22,9 @@ let computerScore = 0;
 const buttons = document.querySelectorAll('button');
 const playerChoiceDiv = document.querySelector('div.player-choice');
 const computerChoiceDiv = document.querySelector("div.computer-choice");
-const explanationDiv = document.querySelector("div.explanation");
-const roundWinnerDiv = document.querySelector("div.round-winner");
 const playerScoreDiv = document.querySelector("div.player-score");
 const computerScoreDiv = document.querySelector("div.computer-score");
+const explanationPara = document.querySelector("p#explanationPara");
 
 //create Elements outside of functions otherwise these elements will get more than 1 HTML Element displayed on webpage.
 const showCpChoice = document.createElement("p");
@@ -44,6 +44,7 @@ buttons.forEach( function(button) {
         let playerSelection = button.id;
         console.log(`Player choice is: ${playerSelection}`);
         showPlChoice.textContent = `${playerSelection}`;
+        showPlChoice.style.cssText = 'font-Weight: bold; text-transform: uppercase;';
         playerChoiceDiv.appendChild(showPlChoice);
         return playerSelection;
       }
@@ -53,17 +54,16 @@ buttons.forEach( function(button) {
 
       function createExplanation() {
         const resultOfRound = playRound(cpChoice, plChoice);
-        explanation.textContent = `${resultOfRound}`;
-        explanationDiv.appendChild(explanation);
+        explanationPara.textContent = `${resultOfRound}`;
         console.log(resultOfRound);
-        return explanation;
+        return explanationPara;
       }
       createExplanation();
 
       function displayScore() {
-        playerScoreBoard.textContent = `Player score \n ${playerScore}`;
+        playerScoreBoard.textContent = `${playerScore}`;
         playerScoreDiv.appendChild(playerScoreBoard);
-        computerScoreBoard.textContent = `Computer score \n ${computerScore}`;
+        computerScoreBoard.textContent = `${computerScore}`;
         computerScoreDiv.appendChild(computerScoreBoard);
       }
       displayScore();

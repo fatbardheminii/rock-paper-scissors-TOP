@@ -1,0 +1,34 @@
+/*General selectors*/
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-size: 22px;
+    display: grid;
+    place-items: center;
+}
+
+/*container*/
+.container {
+    width: 80%;
+    height: 90%;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.sub-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.sub-container *{
+    margin-left: 2rem;
+}

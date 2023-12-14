@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -13,19 +14,26 @@
             <button id="scissors">Scissors</button>
         </div>
         <div class="choices-taken  sub-container">
-            <div class="player-choice"></div>
-            <div class="computer-choice"></div>
+            <div class="player-choice">
+                <p>Player: </p>
+            </div>
+            <div class="computer-choice">
+                <p>Computer: </p>
+            </div>
         </div>
         <div class="round-result sub-container">
-            <div class="explanation"></div>
+            <div class="explanation">
+                <p id="explanationPara">Choose your weapon <br> First to reach 5 points wins the game!</p>
+            </div>
             <div class="round-winner"></div>
         </div>
         <div class="score sub-container">
-            <div class="player-score"></div>
-            <div class="computer-score"></div>
-        </div>
-        <div class="game-end">
-            <button id="resetGame">Play again</button>
+            <div class="player-score">
+                <p>Player score: </p>
+            </div>
+            <div class="computer-score">
+                <p>Computer score: </p>
+            </div>
         </div>
     </div>
     
