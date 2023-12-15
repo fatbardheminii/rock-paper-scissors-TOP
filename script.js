@@ -10,8 +10,6 @@ function getComputerChoice() {
   }
   console.log(`Computer choice is: ${computerChoice}`);
   showCpChoice.textContent = `${computerChoice}`;
-  showCpChoice.style.cssText = "font-Weight: bold; text-transform: uppercase;";
-  computerChoiceDiv.appendChild(showCpChoice);
   return computerChoice;
 }
 
@@ -25,10 +23,10 @@ const computerChoiceDiv = document.querySelector("div.computer-choice");
 const playerScoreDiv = document.querySelector("div.player-score");
 const computerScoreDiv = document.querySelector("div.computer-score");
 const explanationPara = document.querySelector("p#explanationPara");
+const showCpChoice = document.querySelector("p.showCpChoice");
+const showPlChoice = document.querySelector("p.showPlChoice");
 
 //create Elements outside of functions otherwise these elements will get more than 1 HTML Element displayed on webpage.
-const showCpChoice = document.createElement("p");
-const showPlChoice = document.createElement("p");
 const explanation = document.createElement("p");
 const playerScoreBoard = document.createElement("p");
 const computerScoreBoard = document.createElement("p");
@@ -44,8 +42,6 @@ buttons.forEach( function(button) {
         let playerSelection = button.id;
         console.log(`Player choice is: ${playerSelection}`);
         showPlChoice.textContent = `${playerSelection}`;
-        showPlChoice.style.cssText = 'font-Weight: bold; text-transform: uppercase;';
-        playerChoiceDiv.appendChild(showPlChoice);
         return playerSelection;
       }
       //call the values after each click
@@ -109,7 +105,7 @@ function playRound(computerSelection, playerSelection) {
   } else if (computerSelection === "paper" && playerSelection === "scissors") {
     playerScore++;
     console.log(playerScore);
-    return "Scissors beat paper \n The winner of the round is Player!";
+    return "Scissors beat paper \n The winner of the round is: Player!";
   } else if (computerSelection === "scissors" && playerSelection === "rock") {
     playerScore++;
     console.log(playerScore);

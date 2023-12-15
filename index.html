@@ -9,16 +9,22 @@
 <body>
     <div class="container">
         <div class="button-choices   sub-container">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button id="rock">
+                <i class="fa-regular fa-hand-back-fist fa-2xl"></i>
+            </button>
+            <button id="paper">
+                <i class="fa-regular fa-hand fa-2xl"></i>
+            </button>
+            <button id="scissors"><i class="fa-regular fa-hand-scissors fa-flip-horizontal fa-2xl"></i></button>
         </div>
         <div class="choices-taken  sub-container">
             <div class="player-choice">
                 <p>Player: </p>
+                <p style="font-size: 2rem; font-weight:bold; text-transform: uppercase;" class="showPlChoice">?</p>
             </div>
             <div class="computer-choice">
                 <p>Computer: </p>
+                <p style="font-size: 2rem; font-weight:bold; text-transform: uppercase;" class="showCpChoice">?</p>
             </div>
         </div>
         <div class="round-result sub-container">
@@ -36,7 +42,7 @@
             </div>
         </div>
     </div>
-    
+    <script src="https://kit.fontawesome.com/c815d48bf5.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
