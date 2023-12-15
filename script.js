@@ -25,11 +25,11 @@ const computerScoreDiv = document.querySelector("div.computer-score");
 const explanationPara = document.querySelector("p#explanationPara");
 const showCpChoice = document.querySelector("p.showCpChoice");
 const showPlChoice = document.querySelector("p.showPlChoice");
+const playerScoreBoard = document.querySelector("p.playerScoreBoard");
+const computerScoreBoard = document.querySelector("p.computerScoreBoard");
 
 //create Elements outside of functions otherwise these elements will get more than 1 HTML Element displayed on webpage.
 const explanation = document.createElement("p");
-const playerScoreBoard = document.createElement("p");
-const computerScoreBoard = document.createElement("p");
 
 //despite which button is clicked addEvent Listener
 //this addEventListener plays a round when clicked
@@ -39,10 +39,10 @@ buttons.forEach( function(button) {
     function handleEvent(){
       // getPlCho func gets each time clicked new value
       function getPlayerChoice() {
-        let playerSelection = button.id;
-        console.log(`Player choice is: ${playerSelection}`);
-        showPlChoice.textContent = `${playerSelection}`;
-        return playerSelection;
+        let playerChoice = button.id;
+        console.log(`Player choice is: ${playerChoice}`);
+        showPlChoice.textContent = `${playerChoice}`;
+        return playerChoice;
       }
       //call the values after each click
       let plChoice = getPlayerChoice();
@@ -58,9 +58,10 @@ buttons.forEach( function(button) {
 
       function displayScore() {
         playerScoreBoard.textContent = `${playerScore}`;
-        playerScoreDiv.appendChild(playerScoreBoard);
+        playerScoreBoard.style.cssText = "font-size: 2rem; font-weight:bold;";
+        
         computerScoreBoard.textContent = `${computerScore}`;
-        computerScoreDiv.appendChild(computerScoreBoard);
+        computerScoreBoard.style.cssText = "font-size: 2rem; font-weight:bold;";
       }
       displayScore();
 
