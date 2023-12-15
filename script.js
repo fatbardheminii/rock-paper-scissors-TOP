@@ -23,6 +23,7 @@ const computerChoiceDiv = document.querySelector("div.computer-choice");
 const playerScoreDiv = document.querySelector("div.player-score");
 const computerScoreDiv = document.querySelector("div.computer-score");
 const explanationPara = document.querySelector("p#explanationPara");
+const explanationParaValue = document.querySelector("p#explanationPara").innerHTML;
 const showCpChoice = document.querySelector("p.showCpChoice");
 const showPlChoice = document.querySelector("p.showPlChoice");
 const playerScoreBoard = document.querySelector("p.playerScoreBoard");
@@ -71,10 +72,20 @@ buttons.forEach( function(button) {
           window.alert("The winner is Player");
           computerScore = 0;
           playerScore = 0;
+          playerScoreBoard.textContent = "0";
+          computerScoreBoard.textContent = "0";
+          showCpChoice.textContent = "?";
+          showPlChoice.textContent = "?";
+          explanationPara.innerHTML = explanationParaValue;
         } else if (computerScore === 5) {
           window.alert("The Winner is Computer");
           computerScore = 0;
           playerScore = 0;
+          playerScoreBoard.textContent = "0";
+          computerScoreBoard.textContent = "0";
+          showCpChoice.textContent = "?";
+          showPlChoice.textContent = "?";
+          explanationPara.innerHTML = explanationParaValue;
         }
       }
       resetValues();
