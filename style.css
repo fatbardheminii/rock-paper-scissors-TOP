@@ -59,6 +59,12 @@ button:hover i {
     font-weight: bold;
 }
 
+.showPlChoice, .showCpChoice {
+    font-size: 2rem; 
+    font-weight:bold; 
+    text-transform: uppercase;
+}
+
 /*Media queries*/
 @media (max-width: 600px){
     body {
@@ -70,7 +76,10 @@ button:hover i {
     .container, .sub-container {
         width: 100%;
     }
-    .sub-container > button {
+    .sub-container > * {
         margin-left: 1rem;
+    }
+    .showPlChoice, .showCpChoice {
+    font-size: 1.25rem;
     }
 }

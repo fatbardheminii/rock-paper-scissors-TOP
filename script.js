@@ -58,11 +58,8 @@ buttons.forEach( function(button) {
       createExplanation();
 
       function displayScore() {
-        playerScoreBoard.textContent = `${playerScore}`;
-        playerScoreBoard.style.cssText = "font-size: 2rem; font-weight:bold;";
-        
+        playerScoreBoard.textContent = `${playerScore}`;       
         computerScoreBoard.textContent = `${computerScore}`;
-        computerScoreBoard.style.cssText = "font-size: 2rem; font-weight:bold;";
       }
       displayScore();
 
