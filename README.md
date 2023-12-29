@@ -9,4 +9,6 @@ buttons and all infos are shown also on the page.
 The most important part of the project was to practice DOM Manipualtions, Event Listeners and also the whole 
 second part was developed in a separate branch rps-ui, and merged to the main branch.
 
+--New feature added: Icon to change to dark- or light mode.
+
 If you want to check the website click on: [Live demo.](https://fatbardheminii.github.io/rock-paper-scissors-TOP/)
