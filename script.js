@@ -28,6 +28,9 @@ const showCpChoice = document.querySelector("p.showCpChoice");
 const showPlChoice = document.querySelector("p.showPlChoice");
 const playerScoreBoard = document.querySelector("p.playerScoreBoard");
 const computerScoreBoard = document.querySelector("p.computerScoreBoard");
+const darkIcon = document.querySelector('.dark-icon');
+const brightIcon = document.querySelector('.bright-icon');
+const icons = document.querySelectorAll('i');
 
 //create Elements outside of functions otherwise these elements will get more than 1 HTML Element displayed on webpage.
 const explanation = document.createElement("p");
@@ -129,6 +132,33 @@ function playRound(computerSelection, playerSelection) {
     playerSelection !== "scissors"
   ) {
     return "Use only allowed choices: ROCK, PAPER OR SCISSORS!";
+  }
+}
+//add new feature dark- or light mode
+darkIcon.addEventListener("click", () => changeDarkness("dark"));
+brightIcon.addEventListener("click", () => changeDarkness("bright"));
+
+function changeDarkness(mode) {
+  if(mode === 'dark'){
+    darkIcon.style.display = "none";
+    document.body.style.cssText = "background-color: #352F44;color: #FDF7E4";
+    buttons.forEach((button) => {
+      button.style.border = '2px solid white';
+    });
+    icons.forEach((icon) => {
+      icon.style.color = "#FDF7E4";
+    });
+    brightIcon.style.display = 'inline-block';
+  } else if(mode === 'bright'){
+    brightIcon.style.display = "none";
+    darkIcon.style.display = "inline-block";
+    document.body.style.cssText = "";
+    buttons.forEach((button) => {
+      button.style.border = "2px solid black";
+    });
+    icons.forEach((icon) => {
+      icon.style.color = "";
+    });
   }
 }
 
